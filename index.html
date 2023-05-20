@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>OnePage</title>
+
+</head>
+<body>
+	<h1>学習目標を明確化するための３つのポイントを学ぼう！</h1>
+	<h1>学習目標の明確化とは？</h1>
+		<h4>教育の狙いを誰にでもはっきり伝わるようにすることを「学習目標の明確化」といいます。 <br/>学習目標が明確だと、教育を通じて何ができるようになってほしいのかが明確となり、適切な教授手法や評価方法が選びやすくなります。</h4>
+	<h1>1. 学習者の行動で目標を示す</h1>
+		<p>「理解する」「知る」「気づく」といった学習者の頭の中で起こっていることではなく、「説明する」「書き出す」「提案する」といったように、観察可能な行動として記述しましょう。</p>
+		<br>
+		<br>
+			<p><b>NGな記述例</B></p>
+		<br>
+			<p>今回の単元で新出した英単語10個のスペルを知る。<br><br></p>
+			<p><b>OKな記述例</B></p>
+		<br>
+			<p>今回の単元で新出した英単語10個のスペルを<b>何も見ないで</b>完璧に書き出すことができる。</p>
+	<h1>2.目標行動が評価される条件を示す</h1>
+			<p>「電卓を使って」「マニュアルを参照しながら」「何も見ないで」のように、学習者が目標行動を行うときに何を使ってよいかのか、あるいはいけないのかを示しましょう。</p>
+		<br>
+		<br>
+			<p><b>NGな記述例</B></p>
+		<br>
+			<p>20分以内に正しい手順でテントを設営できる。</p>
+		<br>
+		<br>
+			<p><b>OKな記述例</B></p>
+		<br>
+			<p><b>マニュアルを見ながら/見ないで、</b>20分以内に正しい手順でテントを設営できる。</p>
+		<br>
+		<br>
+	<h1>3. 学習目標に対する合格の基準を示す</h1>
+			<p>「完璧に」「5問中4問」のようにどの程度の水準の正確さを求めるのか、あるいは体を使った動作を対象とした目標の場合には、「1分以内で」のように速さとして求める水準を示しましょう。</p>
+		<br>
+		<br>
+			<p><b>NGな記述例</B><p>
+		<br>
+			<p>部下指導の場面で、積極的傾聴の５原則に当てはまっているかを判断し、その理由を述べることができる</p>
+		<br>
+		<br>
+			<p><b>OKな記述例</B></p>
+		<br><p>部下指導の<b>すべての場面で</b>、マニュアルを参照しながら、積極的傾聴の５原則に当てはまっているかを判断し、その理由を述べることができる</p>
+		<br>
+		<br>
+		</p>
+	<h1>チャットボットで練習しよう</h1>
+		<img class="pull-left" src="images/koumei2.png" alt="">
+		<span>ページ右下のチャットボタンのアイコンをクリックすると、このポイントが身についているかを確認するための練習問題に取り組むことができます。</span>
+
+<!--========================================end===========================-->
+
+<script src="https://container-service-1.k7h44kjbv6730.us-east-1.cs.amazonlightsail.com/assets/modules/channel-web/inject.js"></script>
+
+<script>
+
+  // WebChatの初期化
+  window.botpressWebChat.init({
+    extraStylesheet: 'api/v1/bots/learningobjectives2/media/webchat.css',
+    host: 'https://container-service-1.k7h44kjbv6730.us-east-1.cs.amazonlightsail.com',
+    botId: 'learningobjectives2'
+  });
+
+  // プロアクティブ化
+  window.addEventListener('message', function (event) {
+    if (event.data.payload && event.data.payload.type === 'visit' || // v12.26に対応した書き方
+      event.data.name === 'webchatReady') { // v12.30.7に対応した書き方
+      window.botpressWebChat.sendEvent({
+        type: 'proactive-trigger',
+        channel: 'web',
+        // トリガーイベントにwebContextを文字列化して載せる
+        payload: {text: JSON.stringify(webContext)}
+      });
+    }
+  });
+</script>
+</body>
+</html>
